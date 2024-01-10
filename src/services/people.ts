@@ -12,7 +12,7 @@ export const getAll = async (filters: GetAllFilters) => {
   }
 }
 
-type GetOneFilters = { id_event: number, id_group?: number, id: number; }
+type GetOneFilters = { id_event: number, id_group?: number, id?: number; cpf?: string; }
 export const getOne = async (filters: GetOneFilters) => {
   try {
     return await prisma.eventPeople.findFirst({ where: filters });
